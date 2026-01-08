@@ -1,16 +1,164 @@
-# React + Vite
+🔐 AuthFlow
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A frontend assignment project that demonstrates API integration, mocked authentication, protected routes, and robust error handling using React + Vite + Tailwind CSS (v4.1).
 
-Currently, two official plugins are available:
+📌 Project Objective
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+To simulate a real-world frontend application that:
 
-## React Compiler
+Handles authentication-like flows
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Interacts with public APIs
 
-## Expanding the ESLint configuration
+Protects routes based on authentication
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Manages loading and error states gracefully
+
+This project follows the given BRD: API Integration & Authentication Flow (Mocked).
+
+🛠 Tech Stack
+
+Framework: React (Vite)
+
+Styling: Tailwind CSS v4.1
+
+Routing: React Router DOM
+
+HTTP Client: Axios
+
+State Management: React Context API
+
+Storage: Browser localStorage
+
+API: JSONPlaceholder (Public API)
+
+📁 Project Structure
+src/
+│
+├── components/
+│   ├── Loader.jsx
+│   ├── ErrorMessage.jsx
+│   └── ProtectedRoute.jsx
+│
+├── pages/
+│   ├── Login.jsx
+│   └── Dashboard.jsx
+│
+├── services/
+│   ├── api.js
+│   └── authService.js
+│
+├── context/
+│   └── AuthContext.jsx
+│
+├── hooks/
+│   └── useAuth.js
+│
+├── utils/
+│   ├── storage.js
+│   └── constants.js
+│
+├── routes.jsx
+├── App.jsx
+├── main.jsx
+└── index.css
+
+✨ Features Implemented
+🔐 Authentication (Mocked)
+
+Login screen with username & password
+
+Mock authentication logic
+
+Token stored in localStorage
+
+🛡 Route Protection
+
+Dashboard is protected
+
+Unauthenticated users are redirected to Login
+
+📊 Dashboard
+
+Fetches data from a public API
+
+Displays list-based data (Users)
+
+Responsive grid layout
+
+🚪 Logout
+
+Clears authentication token
+
+Redirects user to Login
+
+⚠️ Error & Loading Handling
+
+Loader shown during API calls
+
+Graceful error handling
+
+Meaningful error messages
+
+Retry option on API failure
+
+🔄 Application Flow
+Login → Token Stored → Dashboard (Protected)
+     → Fetch API Data → Logout → Login
+
+🔑 Login Credentials (Mock)
+Username: admin
+Password: admin
+
+🚀 Getting Started
+1️⃣ Clone the Repository
+git clone <your-repo-url>
+cd authflow
+
+2️⃣ Install Dependencies
+npm install
+
+3️⃣ Run the Application
+npm run dev
+
+
+Open:
+👉 http://localhost:5173
+
+📦 Public API Used
+
+JSONPlaceholder
+
+Endpoint: /users
+
+Used to display list-based dashboard data
+
+📋 BRD Coverage Checklist
+BRD Requirement	Status
+Login with username & password	✅
+Mocked authentication	✅
+Token storage	✅
+Protected dashboard	✅
+API data fetching	✅
+Route protection	✅
+Logout	✅
+Loader handling	✅
+Error handling	✅
+Retry option	✅
+⭐ Bonus Features
+
+Axios request interceptor
+
+Centralized API handling
+
+Responsive UI with Tailwind CSS v4.1
+
+⏳ Optional Enhancements (Not Implemented)
+
+Environment-based configuration (.env)
+
+Token expiry handling
+
+📄 License
+
+This project is created for assignment and learning purposes.
